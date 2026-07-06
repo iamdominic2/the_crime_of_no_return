@@ -1,0 +1,2530 @@
+//----- Variables -----------------------------------------------------------------------------------------------------
+
+AT = -18
+attack rafi count = 0
+chapter = 1
+character# = 1
+character x = 2
+character y = 1
+checkcount = 0
+chyeck 1 = 6
+count = 0
+damage = -7
+DE = 27
+enemy = 10
+enemyboutspec = s
+enemy CF = 0
+enemy charge = 1
+enemy hp = 0
+enemy illusion = -1
+Enemy Sleep = 0
+enemy trip = 0
+HardMode? = 1
+Hover = 1
+INTCOUNT = 98244
+intlength = 7
+Ironized = 0
+luck shield = 0
+messagelogc = 0
+music = 2
+new music = 2
+number of enemies = 1
+pill count = 0
+rafi charging = 0
+stat pts = 4
+string = ⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛
+to damage = 0
+user = 
+
+
+//----- Lists ---------------------------------------------------------------------------------------------------------
+
+- = { 
+    ⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜
+    ⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜
+    ⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜👨‍🏫⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜
+    ⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜
+    ⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜
+    ⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜
+    ⬜⬜🔳🔳🔳🔳🔳⬜⬜🔳🔳🔳🔳🔳⬜⬜🔳🔳🔳🔳🔳⬜⬜⬜⬜⬜
+    ⬜⬜⬜🔳👦🔳⬜⬜⬜⬜🔳👧🔳⬜⬜⬜⬜🔳👨🔳⬜⬜⬜⬜⬜⬜
+    ⬜⬜⬜⬜🥼⬜⬜⬜⬜⬜⬜🥼⬜⬜⬜⬜⬜⬜🥼⬜⬜⬜⬜⬜⬜⬜
+    Mr Chan: Hey, so class, we are going to talk about...
+        HP:22/22    Level:1     Next Level:7
+}
+1m = { 
+    -
+    4
+    6
+    2
+    3
+    -
+}
+2m = { 
+    -
+    4
+    3
+    1
+    2
+    -
+}
+3m = { 
+    -
+    5
+    3
+    4
+    3
+    -
+}
+battle log = { 
+    x used Attack!
+    The Robotic Ctrl+Alt+Deleter of Humanity took 7 damage!
+    The Robotic Ctrl+Alt+Deleter of Humanity was defeated!
+    Gained 18 Exp.Points!
+}
+character mp = { 
+    5
+    16
+    24
+}
+enemy data = { 
+    170703007
+    131101006
+    421310077
+    491410055
+    461811050
+    9999999e9
+    582417231
+    602618247
+    562523212
+    752719533
+}
+Enemy Names = { 
+    A boy
+    A girl
+    Mr Ma
+    A policeman
+    A policewoman
+    Diddy Officer
+    The ChatGPT Robot
+    The Deepseek Robot
+    The Gemini Robot
+    The Robotic Ctrl+Alt+Deleter of Humanity
+}
+enemyspecial = { 
+    
+    
+    t
+    z
+    m
+    p
+    csp
+    czp
+    zsp
+    itcszp
+}
+exp = { 
+    0
+    89
+    1528
+}
+mpidm = { 
+    5
+    4
+    3
+}
+names = { 
+    
+    Tane
+    Rafi
+}
+protagonist data = { 
+    18101122
+    26190841
+    20392070
+}
+protagonist hps = { 
+    22
+    41
+    70
+}
+protagonist levels = { 
+    1
+    4
+    8
+}
+protagonist status = { 
+    0
+    0
+    0
+}
+rafi attacks = { 
+    Attack
+    Critdodge
+    Charge
+    Bark
+    Yap
+}
+Shields = { 
+    1
+    1
+    1
+}
+tane attacks = { 
+    Attack
+    Tackle
+    Berserk
+    Unpower
+    Illusion
+}
+unlocked skills 1 = { 
+    1
+}
+unlocked skills 2 = { 
+    1
+}
+unlocked skills 3 = { 
+    1
+    4
+}
+unlock skills lvls = { 
+    5
+    9
+    12
+}
+username attacks = { 
+    Attack
+    Spikes
+    Ironize
+    Yawn
+    Body Press
+}
+
+
+//----- Green flag events ---------------------------------------------------------------------------------------------
+
+WhenGreenFlagClicked()
+{
+    Control.Wait(0);
+    Forever
+    {
+        Sound.PlayUntilDone(music);
+    }
+}
+
+WhenGreenFlagClicked()
+{
+    music = 1;
+    new music = 1;
+    Forever
+    {
+        If (Not ((new music == music)))
+        {
+            Sound.StopAllSounds();
+            music = new music;
+        }
+    }
+}
+
+WhenGreenFlagClicked()
+{
+    If (Not ())
+    {
+        If (Not ())
+        {
+            List.DeleteAll(protagonist levels);
+            List.DeleteAll(protagonist data);
+            List.DeleteAll(unlocked skills 1);
+            List.Add(unlocked skills 1, 1);
+            List.DeleteAll(unlocked skills 2);
+            List.Add(unlocked skills 2, 1);
+            pill count = 0;
+            character# = 1;
+            List.Add(protagonist data, 18101122);
+            List.Add(protagonist data, 26190841);
+            List.Add(protagonist data, 20392070);
+            List.DeleteAll(unlocked skills 3);
+            List.Add(unlocked skills 3, 1);
+            List.Add(unlocked skills 3, 4);
+            List.DeleteAll(exp);
+            List.Add(exp, 0);
+            List.Add(exp, 89);
+            List.Add(exp, 1528);
+            List.Add(protagonist levels, 1);
+            List.Add(protagonist levels, 4);
+            List.Add(protagonist levels, 8);
+            List.DeleteAll(protagonist hps);
+            List.Add(protagonist hps, 22);
+            List.Add(protagonist hps, 41);
+            List.Add(protagonist hps, 70);
+            HardMode? = 1;
+            Repeat Until Sensing.KeyPressed(space)
+            {
+                List.DeleteAll(-);
+                List.Add(-, "The Crime of No Return");
+                List.Add(-, "");
+                List.Add(-, ">New Game");
+                List.Add(-, "");
+                List.Add(-, "");
+                List.Add(-, "");
+                List.Add(-, "");
+                List.Add(-, "");
+            }
+            Sensing.Ask("Name?");
+            user = Sensing.Answer();
+            List.Add(names, Sensing.Answer());
+            List.Add(names, "Tane");
+            List.Add(names, "Rafi");
+            Sound.Play(Tick);
+            new music = 2;
+            Wait Until (Not (Sensing.KeyPressed(space)));
+            Repeat Until Sensing.KeyPressed(space)
+            {
+                List.DeleteAll(-);
+                List.Add(-, "⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜");
+                List.Add(-, "⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜");
+                List.Add(-, "⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜👨‍🏫⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜");
+                List.Add(-, "⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜");
+                List.Add(-, "⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜");
+                List.Add(-, "⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜");
+                List.Add(-, "⬜⬜🔳🔳🔳🔳🔳⬜⬜🔳🔳🔳🔳🔳⬜⬜🔳🔳🔳🔳🔳⬜⬜⬜⬜⬜");
+                List.Add(-, "⬜⬜⬜🔳👦🔳⬜⬜⬜⬜🔳👧🔳⬜⬜⬜⬜🔳👨🔳⬜⬜⬜⬜⬜⬜");
+                List.Add(-, "⬜⬜⬜⬜🥼⬜⬜⬜⬜⬜⬜🥼⬜⬜⬜⬜⬜⬜🥼⬜⬜⬜⬜⬜⬜⬜");
+                List.Add(-, "Mr Chan: Hey, so class, we are going to talk about...");
+                Call List levels;
+            }
+            Sound.Play(drama);
+            Wait Until (Not (Sensing.KeyPressed(space)));
+            Repeat Until Sensing.KeyPressed(space)
+            {
+                List.DeleteAll(-);
+                List.Add(-, "⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜");
+                List.Add(-, "⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜");
+                List.Add(-, "⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜👨‍🏫⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜");
+                List.Add(-, "⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜");
+                List.Add(-, "⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜");
+                List.Add(-, "⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜");
+                List.Add(-, "⬜⬜🔳🔳🔳🔳🔳⬜⬜🔳🔳🔳🔳🔳⬜⬜🔳🔳🔳🔳🔳⬜⬜⬜⬜⬜");
+                List.Add(-, "⬜⬜⬜🔳👦🔳⬜⬜⬜⬜🔳👧🔳⬜⬜⬜⬜🔳👨🔳⬜⬜⬜⬜⬜⬜");
+                List.Add(-, "⬜⬜⬜⬜🥼⬜⬜⬜⬜⬜⬜🥼⬜⬜⬜⬜⬜⬜🥼⬜⬜⬜⬜⬜⬜⬜");
+                List.Add(-, "Girl: Hey, you are ugly and non-sigma! I will beat you down, skibidi boy!");
+                Call List levels;
+            }
+            Wait Until (Not (Sensing.KeyPressed(space)));
+            Repeat Until Sensing.KeyPressed(space)
+            {
+                List.DeleteAll(-);
+                List.Add(-, "⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜");
+                List.Add(-, "⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜");
+                List.Add(-, "⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜👨‍🏫⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜");
+                List.Add(-, "⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜");
+                List.Add(-, "⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜");
+                List.Add(-, "⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜");
+                List.Add(-, "⬜⬜🔳🔳🔳🔳🔳⬜⬜🔳🔳🔳🔳🔳⬜⬜🔳🔳🔳🔳🔳⬜⬜⬜⬜⬜");
+                List.Add(-, "⬜⬜⬜🔳👦🔳⬜⬜⬜⬜🔳👧🔳⬜⬜⬜⬜🔳👨🔳⬜⬜⬜⬜⬜⬜");
+                List.Add(-, "⬜⬜⬜⬜🥼⬜⬜⬜⬜⬜⬜🥼⬜⬜⬜⬜⬜⬜🥼⬜⬜⬜⬜⬜⬜⬜");
+                List.Add(-, Operator.Join(user, ": Da hell you talking 'bout, gurl?"));
+                Call List levels;
+            }
+            new music = 3;
+            List.DeleteAll(-);
+            Call Battle(2);
+            new music = 2;
+            Wait Until (Not (Sensing.KeyPressed(space)));
+            Repeat Until Sensing.KeyPressed(space)
+            {
+                List.DeleteAll(-);
+                List.Add(-, "⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜");
+                List.Add(-, "⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜");
+                List.Add(-, "⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜👨‍🏫⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜");
+                List.Add(-, "⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜");
+                List.Add(-, "⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜");
+                List.Add(-, "⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜");
+                List.Add(-, "⬜⬜🔳🔳🔳🔳🔳⬜⬜🔳🔳🔳🔳🔳⬜⬜🔳🔳🔳🔳🔳⬜⬜⬜⬜⬜");
+                List.Add(-, "⬜⬜⬜🔳👦🔳⬜⬜⬜⬜🔳👧🔳⬜⬜⬜⬜🔳👨🔳⬜⬜⬜⬜⬜⬜");
+                List.Add(-, "⬜⬜⬜⬜🥼⬜⬜⬜⬜⬜⬜🥼⬜⬜⬜⬜⬜⬜🥼⬜⬜⬜⬜⬜⬜⬜");
+                List.Add(-, "Boy: My turn now!");
+                Call List levels;
+            }
+            new music = 3;
+            List.DeleteAll(-);
+            Call Battle(1);
+            new music = 2;
+            Wait Until (Not (Sensing.KeyPressed(space)));
+            Sound.Play(Scream2);
+            Repeat Until Sensing.KeyPressed(space)
+            {
+                List.DeleteAll(-);
+                List.Add(-, "⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜");
+                List.Add(-, "⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜");
+                List.Add(-, "⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜👨‍🏫⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜");
+                List.Add(-, "⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜");
+                List.Add(-, "⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜");
+                List.Add(-, "⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜");
+                List.Add(-, "⬜⬜🔳🔳🔳🔳🔳⬜⬜🔳🔳🔳🔳🔳⬜⬜🔳🔳🔳🔳🔳⬜⬜⬜⬜⬜");
+                List.Add(-, "⬜⬜⬜🔳👦🔳⬜⬜⬜⬜🔳👧🔳⬜⬜⬜⬜🔳👨🔳⬜⬜⬜⬜⬜⬜");
+                List.Add(-, "⬜⬜⬜⬜🥼⬜⬜⬜⬜⬜⬜🥼⬜⬜⬜⬜⬜⬜🥼⬜⬜⬜⬜⬜⬜⬜");
+                List.Add(-, "Mr Chan: What is happening? ");
+                Call List levels;
+            }
+            Wait Until (Not (Sensing.KeyPressed(space)));
+            Repeat Until Sensing.KeyPressed(space)
+            {
+                List.DeleteAll(-);
+                List.Add(-, "⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜");
+                List.Add(-, "⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜");
+                List.Add(-, "⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜👨‍🏫⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜");
+                List.Add(-, "⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜");
+                List.Add(-, "⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜");
+                List.Add(-, "⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜");
+                List.Add(-, "⬜⬜🔳🔳🔳🔳🔳⬜⬜🔳🔳🔳🔳🔳⬜⬜🔳🔳🔳🔳🔳⬜⬜⬜⬜⬜");
+                List.Add(-, "⬜⬜⬜🔳👦🔳⬜⬜⬜⬜🔳👧🔳⬜⬜⬜⬜🔳👨🔳⬜⬜⬜⬜⬜⬜");
+                List.Add(-, "⬜⬜⬜⬜🥼⬜⬜⬜⬜⬜⬜🥼⬜⬜⬜⬜⬜⬜🥼⬜⬜⬜⬜⬜⬜⬜");
+                List.Add(-, Operator.Join("Mr Chan: ", Operator.Join(user, ", no freedom to defend yourself! Leave!")));
+                Call List levels;
+            }
+            Wait Until (Not (Sensing.KeyPressed(space)));
+            Repeat Until Sensing.KeyPressed(space)
+            {
+                List.DeleteAll(-);
+                List.Add(-, "⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜");
+                List.Add(-, "⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜");
+                List.Add(-, "⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜👨‍🏫⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜");
+                List.Add(-, "⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜");
+                List.Add(-, "⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜");
+                List.Add(-, "⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜");
+                List.Add(-, "⬜⬜🔳🔳🔳🔳🔳⬜⬜🔳🔳🔳🔳🔳⬜⬜🔳🔳🔳🔳🔳⬜⬜⬜⬜⬜");
+                List.Add(-, "⬜⬜⬜🔳👦🔳⬜⬜⬜⬜🔳👧🔳⬜⬜⬜⬜🔳👨🔳⬜⬜⬜⬜⬜⬜");
+                List.Add(-, "⬜⬜⬜⬜🥼⬜⬜⬜⬜⬜⬜🥼⬜⬜⬜⬜⬜⬜🥼⬜⬜⬜⬜⬜⬜⬜");
+                List.Add(-, Operator.Join(user, Operator.Join(": ", "Big yikes, to aura, gotta dash.")));
+                Call List levels;
+            }
+            Wait Until (Not (Sensing.KeyPressed(space)));
+            List.DeleteAll(-);
+            Sound.Play(run!);
+            List.Add(-, "⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜");
+            List.Add(-, "⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜");
+            List.Add(-, "⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜👨‍🏫⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜");
+            List.Add(-, "⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜");
+            List.Add(-, "⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜");
+            List.Add(-, "⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜");
+            List.Add(-, "⬜⬜🔳🔳🔳🔳🔳⬜⬜🔳🔳🔳🔳🔳⬜⬜🔳🔳🔳🔳🔳⬜⬜⬜⬜⬜");
+            List.Add(-, "⬜👦⬜🔳⬜🔳⬜⬜⬜⬜🔳👧🔳⬜⬜⬜⬜🔳👨🔳⬜⬜⬜⬜⬜⬜");
+            List.Add(-, "⬜🥼⬜⬜⬜⬜⬜⬜⬜⬜⬜🥼⬜⬜⬜⬜⬜⬜🥼⬜⬜⬜⬜⬜⬜⬜");
+            Call List levels;
+            Control.Wait(0.1);
+            List.DeleteAll(-);
+            List.Add(-, "⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜");
+            List.Add(-, "⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜");
+            List.Add(-, "⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜👨‍🏫⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜");
+            List.Add(-, "⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜");
+            List.Add(-, "⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜");
+            List.Add(-, "⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜");
+            List.Add(-, "⬜👦🔳🔳🔳🔳🔳⬜⬜🔳🔳🔳🔳🔳⬜⬜🔳🔳🔳🔳🔳⬜⬜⬜⬜⬜");
+            List.Add(-, "⬜🥼⬜🔳⬜🔳⬜⬜⬜⬜🔳👧🔳⬜⬜⬜⬜🔳👨🔳⬜⬜⬜⬜⬜⬜");
+            List.Add(-, "⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜🥼⬜⬜⬜⬜⬜⬜🥼⬜⬜⬜⬜⬜⬜⬜");
+            Call List levels;
+            Control.Wait(0.1);
+            List.DeleteAll(-);
+            List.Add(-, "⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜");
+            List.Add(-, "⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜");
+            List.Add(-, "⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜👨‍🏫⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜");
+            List.Add(-, "⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜");
+            List.Add(-, "⬜👦⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜");
+            List.Add(-, "⬜🥼⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜");
+            List.Add(-, "⬜⬜🔳🔳🔳🔳🔳⬜⬜🔳🔳🔳🔳🔳⬜⬜🔳🔳🔳🔳🔳⬜⬜⬜⬜⬜");
+            List.Add(-, "⬜⬜⬜🔳⬜🔳⬜⬜⬜⬜🔳👧🔳⬜⬜⬜⬜🔳👨🔳⬜⬜⬜⬜⬜⬜");
+            List.Add(-, "⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜🥼⬜⬜⬜⬜⬜⬜🥼⬜⬜⬜⬜⬜⬜⬜");
+            Call List levels;
+            Control.Wait(0.1);
+            List.DeleteAll(-);
+            List.Add(-, "⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜");
+            List.Add(-, "⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜");
+            List.Add(-, "⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜👨‍🏫⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜");
+            List.Add(-, "⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜");
+            List.Add(-, "⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜");
+            List.Add(-, "⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜");
+            List.Add(-, "⬜⬜🔳🔳🔳🔳🔳⬜⬜🔳🔳🔳🔳🔳⬜⬜🔳🔳🔳🔳🔳⬜⬜⬜⬜⬜");
+            List.Add(-, "⬜⬜⬜🔳⬜🔳⬜⬜⬜⬜🔳👧🔳⬜⬜⬜⬜🔳👨🔳⬜⬜⬜⬜⬜⬜");
+            List.Add(-, "⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜🥼⬜⬜⬜⬜⬜⬜🥼⬜⬜⬜⬜⬜⬜⬜");
+            Call List levels;
+            Control.Wait(0.1);
+            character x = 1;
+            character y = 1;
+            Repeat Until (character y > 7)
+            {
+                Call Area("⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜")("⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬜⬜")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬜⬜")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬜⬜")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬜⬜")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬜⬜")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬜⬜")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛🟥🟫🟫");
+                If (Sensing.KeyPressed(right arrow) And (character x < 25))
+                {
+                    character x += 1;
+                }
+                If (Sensing.KeyPressed(left arrow) And (((character x > 1) And (character y == 1)) Or (character x == 25)))
+                {
+                    character x += -1;
+                }
+                If (Sensing.KeyPressed(up arrow) And (character y > 1))
+                {
+                    character y += -1;
+                }
+                If (Sensing.KeyPressed(down arrow) And (character x > 23))
+                {
+                    character y += 1;
+                }
+                Control.Wait(0.15);
+                If (((Sensing.KeyPressed(right arrow) Or Sensing.KeyPressed(left arrow)) Or (Sensing.KeyPressed(up arrow) Or Sensing.KeyPressed(down arrow))) And (Operator.Random(1 , 10) == 1))
+                {
+                    List.Add(-, "???: Brainrot boy, stop tweaking my homie!");
+                    Wait Until Sensing.KeyPressed(space);
+                    List.DeleteAll(-);
+                    If (protagonist levels[1] > 4)
+                    {
+                        number of enemies = 2;
+                    }
+                    Else
+                    {
+                        number of enemies = 1;
+                    }
+                    new music = 3;
+                    Call Battle(Operator.Random(1 , 2));
+                    new music = 2;
+                }
+            }
+            List.DeleteAll(-);
+            List.Add(unlocked skills 1, 6);
+            List.Add(unlocked skills 2, 6);
+            List.Add(unlocked skills 3, 6);
+            character x = 26;
+            character y = 1;
+            Call Area("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛💊⬜⬜")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛💊⬜⬜")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛💊💊💊")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛");
+            List.Add(-, "Mr Ma: What gassin' you doin' in medical room? L, Go home!");
+            Wait Until (Not (Sensing.KeyPressed(space)));
+            Wait Until Sensing.KeyPressed(space);
+            Call Area("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛💊⬜⬜")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛💊⬜⬜")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛💊💊💊")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛");
+            List.Add(-, "Tane: The GOAT is hurt! That's why he's here!");
+            Wait Until (Not (Sensing.KeyPressed(space)));
+            Wait Until Sensing.KeyPressed(space);
+            Call Area("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛💊⬜⬜")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛💊⬜⬜")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛💊💊💊")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛");
+            List.Add(-, "Mr Ma: No CAP, you can't use this room without approval!");
+            Wait Until (Not (Sensing.KeyPressed(space)));
+            Wait Until Sensing.KeyPressed(space);
+            Call Area("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛💊⬜⬜")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛💊⬜⬜")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛💊💊💊")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛");
+            List.Add(-, "Mr Ma: OK boomer, L+Ratio, sussy baka, go touch grass!");
+            Wait Until (Not (Sensing.KeyPressed(space)));
+            Wait Until Sensing.KeyPressed(space);
+            Call Area("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛💊⬜⬜")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛💊⬜⬜")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛💊💊💊")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛");
+            List.Add(-, "Tane: Stop Rage Baiting him!!!");
+            Wait Until (Not (Sensing.KeyPressed(space)));
+            Wait Until Sensing.KeyPressed(space);
+            Call Area("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛💊⬜⬜")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛💊⬜⬜")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛💊💊💊")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛");
+            Sound.Play(Scream2);
+            List.Add(-, "Mr Ma: Who is this diva? Boom Boom, grow up!");
+            Wait Until (Not (Sensing.KeyPressed(space)));
+            Wait Until Sensing.KeyPressed(space);
+            Call Area("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛💊⬜⬜")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛💊⬜⬜")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛💊💊💊")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛");
+            List.Add(-, Operator.Join(Operator.Join("Tane: Bruh, its ", user), "! But you will get owned, and get shook!"));
+            Wait Until (Not (Sensing.KeyPressed(space)));
+            Wait Until Sensing.KeyPressed(space);
+            Call Area("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬜⬜⬜")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬜⬜⬜")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬜⬜⬜")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛");
+            List.Add(-, Operator.Join(user, ": Okay. Slay! Let's fight outside!"));
+            Wait Until (Not (Sensing.KeyPressed(space)));
+            Wait Until Sensing.KeyPressed(space);
+            number of enemies = 1;
+            pill count += 15;
+            character# = 2;
+            Call Heal(1);
+            Control.Wait(1);
+            new music = 4;
+            Call Battle(3);
+            new music = 5;
+            Call Area("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬜⬜⬜")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬜⬜⬜")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬜⬜⬜")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛");
+            List.Add(-, Operator.Join(user, ": Dab me up! +1000 Aura! Aren't we now sigmas?"));
+            Wait Until (Not (Sensing.KeyPressed(space)));
+            Wait Until Sensing.KeyPressed(space);
+            Call Area("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬜⬜⬜")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬜⬜⬜")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬜⬜⬜")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛");
+            List.Add(-, "Mr Ma: Big Spikes, come, police! Brainrot yapping sus boys!");
+            Wait Until (Not (Sensing.KeyPressed(space)));
+            Wait Until Sensing.KeyPressed(space);
+            Call Area("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬜⬜⬜")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬜⬜⬜")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬜⬜⬜")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛");
+            List.Add(-, "Tane: OK Boomer, he's salty, let's not deal with this simp skill issue and leave.");
+            Wait Until (Not (Sensing.KeyPressed(space)));
+            Wait Until Sensing.KeyPressed(space);
+            Sound.PlayUntilDone(run!);
+            Call Heal(1);
+            Call Heal(2);
+            chapter = 2;
+            character x = 26;
+            character y = 7;
+            Repeat Until ((character x < 7) And (character y > 7))
+            {
+                Call Colision: Area 2;
+                Call Area("🏙️🏙️🏙️🏙️🏙️🏙️🏙️🏙️🏙️🏙️🏙️🏙️🏙️🏙️🏙️🏙️🏙️🏙️🏙️🏙️🏙️🏙️🏙️🏙️🏙️🏙️🏙️")("⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜")("⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜")("⬜⬜⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛🛏️⬜")("⬜⬜⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬜⬜")("⬜⬜⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬜⬜")("⬜⬜⬜⬜⬜⬜⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬜⬜")("⬜⬜⬜⬜⬜⬜⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬜⬜")("⬛⬛⬛⬛🟫🟫⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛");
+                If (((Sensing.KeyPressed(right arrow) Or Sensing.KeyPressed(left arrow)) Or (Sensing.KeyPressed(up arrow) Or Sensing.KeyPressed(down arrow))) And (Operator.Random(1 , 14) == 1))
+                {
+                    List.Add(-, "Police: Time to catch these buggers caught in 4K!");
+                    Wait Until Sensing.KeyPressed(space);
+                    List.DeleteAll(-);
+                    If (protagonist levels[1] > 8)
+                    {
+                        number of enemies = 2;
+                    }
+                    Else
+                    {
+                        number of enemies = 1;
+                    }
+                    new music = 6;
+                    Call Battle(Operator.Random(4 , 5));
+                    new music = 5;
+                }
+            }
+        }
+        character x = 6;
+        character y = 1;
+        Call Area("⬛⬛⬛⬛⬜⬜👮⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬛⬛⬛⬛⬜⬜⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬛⬛⬛⬛⬜⬜⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬛⬛⬛⬛⬜⬜⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬛⬛⬛⬛⬜⬜⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬛⬛⬛⬛⬜⬜⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬛⬛⬛⬛⬜⬜⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬛⬛⬛⬛⬜⬜⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬛⬛⬛⬛⬜⬜⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛");
+        Sound.Play(drama);
+        List.Add(-, "???: I found you at last!");
+        Wait Until (Not (Sensing.KeyPressed(space)));
+        Wait Until Sensing.KeyPressed(space);
+        List.DeleteItem(-, List.Length(-));
+        List.Add(-, "Tane: I can't lie, a jumpscare?");
+        Wait Until (Not (Sensing.KeyPressed(space)));
+        Wait Until Sensing.KeyPressed(space);
+        List.DeleteItem(-, List.Length(-));
+        List.Add(-, "???: I'm the Diddy. I'm the strongest of the polices.");
+        Wait Until (Not (Sensing.KeyPressed(space)));
+        Wait Until Sensing.KeyPressed(space);
+        List.DeleteItem(-, List.Length(-));
+        Sound.PlayUntilDone(slice);
+        List.Add(-, "Tane: Main character syndrome, right? Go tweak on us!");
+        Wait Until (Not (Sensing.KeyPressed(space)));
+        Wait Until Sensing.KeyPressed(space);
+        number of enemies = 1;
+        new music = 7;
+        enemy hp = "Infinity";
+        Call Battle(6);
+        new music = 5;
+        Call Colision: Area 2;
+        Sound.Play(run!);
+        Repeat (10)
+        {
+            Call Area("⬛⬛⬛⬛⬜⬜👮⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬛⬛⬛⬛⬜⬜⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬛⬛⬛⬛⬜⬜⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬛⬛⬛⬛⬜⬜⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬛⬛⬛⬛⬜⬜⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬛⬛⬛⬛⬜⬜⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬛⬛⬛⬛⬜⬜⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬛⬛⬛⬛⬜⬜⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬛⬛⬛⬛⬜⬜⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛");
+            character y += 1;
+            List.Add(-, "Tane: Got shook and owned! Puff hits different. Run!");
+            Control.Wait(0.23);
+        }
+        character# = 3;
+        chapter = 3;
+        character x = 25;
+        character y = 1;
+        new music = 9;
+        Call Area("⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜🛏️")("⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜")("⬜⬜⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬜⬜⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬜⬜⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬜⬜⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬜⬜⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬜⬜⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("🟫🟫⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛");
+        List.Add(-, "Rafi: Hi! What bring you besites here?");
+        Wait Until Sensing.KeyPressed(space);
+        Wait Until (Not (Sensing.KeyPressed(space)));
+        List.DeleteItem(-, List.Length(-));
+        List.Add(-, "Tane: WE'RE LOCKED IN; NEED TO HIDE!!!");
+        Wait Until Sensing.KeyPressed(space);
+        Wait Until (Not (Sensing.KeyPressed(space)));
+        List.DeleteItem(-, List.Length(-));
+        List.Add(-, "Rafi: Bet! I know, the chief police officer's cookin' again, right?");
+        pill count += 10;
+        Wait Until Sensing.KeyPressed(space);
+        Wait Until (Not (Sensing.KeyPressed(space)));
+        List.DeleteItem(-, List.Length(-));
+        List.Add(-, "Rafi: Also, there's some vaccines nearby. But there are robots guarding.");
+        Wait Until Sensing.KeyPressed(space);
+        Wait Until (Not (Sensing.KeyPressed(space)));
+        List.DeleteItem(-, List.Length(-));
+        List.Add(-, "Rafi: I'll give you GOATS medicine too.");
+        Wait Until Sensing.KeyPressed(space);
+        Wait Until (Not (Sensing.KeyPressed(space)));
+        List.DeleteItem(-, List.Length(-));
+        List.Add(-, "Tane: Look at the world now, it's all AI...");
+        Wait Until Sensing.KeyPressed(space);
+        Wait Until (Not (Sensing.KeyPressed(space)));
+        Sound.Play(sol);
+        Call Heal(1);
+        Call Heal(2);
+        Call Heal(3);
+        Repeat Until (character y > 7)
+        {
+            Call Area("⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜🛏️")("⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜")("⬜⬜⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬜⬜⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬜⬜⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬜⬜⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬜⬜⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬜⬜⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("🟫🟫⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛");
+            If (Sensing.KeyPressed(right arrow) And ((character x < 25) And ((character y == 1) Or (character x == 1))))
+            {
+                character x += 1;
+                If ((character x == 25) And (character y == 1))
+                {
+                    Sound.Play(sol);
+                    Call Heal(1);
+                    Call Heal(2);
+                    Call Heal(3);
+                }
+            }
+            If (Sensing.KeyPressed(left arrow) And (character x > 1))
+            {
+                character x += -1;
+                If ((character x == 25) And (character y == 1))
+                {
+                    Sound.Play(sol);
+                    Call Heal(3);
+                    Call Heal(2);
+                    Call Heal(1);
+                }
+            }
+            If (Sensing.KeyPressed(up arrow) And (character y > 1))
+            {
+                character y += -1;
+            }
+            If (Sensing.KeyPressed(down arrow) And (character x < 3))
+            {
+                character y += 1;
+            }
+            Control.Wait(0.15);
+            If (((Sensing.KeyPressed(right arrow) Or Sensing.KeyPressed(left arrow)) Or (Sensing.KeyPressed(up arrow) Or Sensing.KeyPressed(down arrow))) And (Operator.Random(1 , 19) == 1))
+            {
+                List.Add(-, "???: INTRIDER ALERT BEEP BEPP!!!!");
+                Wait Until Sensing.KeyPressed(space);
+                List.DeleteAll(-);
+                number of enemies = 1;
+                new music = 10;
+                Call Battle(Operator.Random(7 , 9));
+                new music = 9;
+            }
+        }
+    }
+    character y = 1;
+    List.DeleteAll(-);
+    Call Area("⬜⬜💉💉⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬜⬜💉💉⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("💉💉⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛")("⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛");
+    List.Add(-, "Rafi: We're in the vaccine room. Let's start looksmaxxing...");
+    Wait Until Sensing.KeyPressed(space);
+    Sound.Play(drama);
+    List.DeleteItem(-, List.Length(-));
+    List.Add(-, "Giant Robot: ELIMINATE. UNAUTHORIZED ENTERING.");
+    Wait Until (Not (Sensing.KeyPressed(space)));
+    Wait Until Sensing.KeyPressed(space);
+    List.DeleteItem(-, List.Length(-));
+    List.Add(-, "Rafi: Sheesh, what a shame...");
+    Wait Until (Not (Sensing.KeyPressed(space)));
+    Wait Until Sensing.KeyPressed(space);
+    new music = 11;
+    Call Battle(10);
+    new music = 31;
+    List.DeleteAll(-);
+    List.Add(-, "Having taken down the robot, they empowered themselves.");
+    Control.Wait(5);
+    List.Add(-, "They were easily able to defeat the ultimate evil, DIDDY.");
+    Control.Wait(5);
+    List.Add(-, Operator.Join(Operator.Join("When ", user), " returned to school, nobody wanted to bully him anymore."));
+    Control.Wait(5);
+    List.Add(-, "They have recognized that he was able to to amazing things!");
+    Control.Wait(5);
+    List.Add(-, "THE END");
+    Control.Wait(5);
+}
+
+WhenGreenFlagClicked()
+{
+    List.DeleteAll(names);
+    chapter = 1;
+    number of enemies = 1;
+}
+
+WhenGreenFlagClicked()
+{
+    List.DeleteAll(Shields);
+    List.Add(Shields, 1);
+    List.Add(Shields, 1);
+    List.Add(Shields, 1);
+}
+
+
+//----- Custom blocks -------------------------------------------------------------------------------------------------
+
+Define Area(string 1)(string 2)(string 3)(string 4)(string 5)(string 6)(string 7)(string 8)(string 9) (warp=true)
+{
+    List.DeleteAll(-);
+    Call Find string with username(1)(1);
+    Call Find string with username(2)(2);
+    Call Find string with username(3)(3);
+    Call Find string with username(4)(4);
+    Call Find string with username(5)(5);
+    Call Find string with username(6)(6);
+    Call Find string with username(7)(7);
+    Call Find string with username(8)(8);
+    Call Find string with username(9)(9);
+    Call List levels;
+}
+
+Define arget (warp=false)
+{
+    Repeat Until ((protagonist hps[to damage] > 0) Or (checkcount > 100000))
+    {
+        to damage = Operator.Random(1 , character#);
+        checkcount += 1;
+    }
+    If ((attack rafi count > 0) And (protagonist hps[3] > 0))
+    {
+        to damage = 3;
+        attack rafi count += -1;
+    }
+    If (checkcount > 100000)
+    {
+        Control.Wait(1);
+        If (enemy == 6)
+        {
+            Stop(this script);
+        }
+        Else
+        {
+            List.Add(-, Operator.Join(user, " was utterly destroyed."));
+            new music = 31;
+            Repeat Until 
+;
+        }
+    }
+}
+
+Define Battle(string enemy) (warp=false)
+{
+    List.DeleteAll(battle log);
+    List.DeleteAll(protagonist status);
+    List.Add(protagonist status, 0);
+    List.Add(protagonist status, 0);
+    List.Add(protagonist status, 0);
+    List.DeleteAll(character mp);
+    List.Add(character mp, (protagonist levels[1] * 5));
+    List.Add(character mp, (protagonist levels[2] * 4));
+    List.Add(character mp, (protagonist levels[3] * 3));
+    rafi charging = 0;
+    enemy illusion = 0;
+    enemy trip = 0;
+    attack rafi count = 0;
+    Ironized = 0;
+    Enemy Sleep = 0;
+    enemy CF = 0;
+    luck shield = 0;
+    Wait Until (Not (Sensing.KeyPressed(space)));
+    count = number of enemies;
+    enemy = enemy;
+    enemy charge = 1;
+    Hover = 1;
+    Repeat (number of enemies)
+    {
+        enemy hp = (Operator.Join(Operator.Join(Operator.LetterOf(enemy data[enemy], 7), Operator.LetterOf(enemy data[enemy], 8)), Operator.LetterOf(enemy data[enemy], 9)) * 6);
+        Repeat Until (enemy hp < 1)
+        {
+            Call DEC STATUS(1);
+            Call DEC STATUS(2);
+            Call DEC STATUS(3);
+            List.ReplaceItem(Shields, 1, 1);
+            List.ReplaceItem(Shields, 2, 1);
+            List.ReplaceItem(Shields, 3, 1);
+            If (protagonist hps[1] > 0)
+            {
+                If (Ironized == 0)
+                {
+                    Call username turn;
+                }
+            }
+            Call Battle int.(2);
+            Wait Until (Not (Sensing.KeyPressed(space)));
+            enemy illusion += -1;
+            If (enemy illusion == 0)
+            {
+                List.Add(battle log, Operator.Join(Enemy Names[enemy], " is no longer inaccurate."));
+            }
+            If (((character# > 1) And (protagonist hps[2] > 0)) And (enemy hp > 0))
+            {
+                If (Ironized == 0)
+                {
+                    Call tane turn;
+                }
+            }
+            Call Battle int.(2);
+            Wait Until (Not (Sensing.KeyPressed(space)));
+            If (((character# > 2) And (protagonist hps[3] > 0)) And (enemy hp > 0))
+            {
+                If (Ironized == 0)
+                {
+                    Call rafi turn;
+                }
+            }
+            Call Battle int.(2);
+            Wait Until (Not (Sensing.KeyPressed(space)));
+            If (enemy hp < 1)
+            {
+                Sound.Play(die);
+                List.Add(battle log, Operator.Join(Enemy Names[enemy], " was defeated!"));
+            }
+            Repeat (((count - (enemy hp < 1)) + (enemy == 10)))
+            {
+                to damage = 0;
+                checkcount = 0;
+                If (enemy hp > 0)
+                {
+                    Call arget;
+                    If ((enemy trip == 1) Or (Enemy Sleep > 0))
+                    {
+                        If (Enemy Sleep > 0)
+                        {
+                            List.Add(battle log, Operator.Join(Enemy Names[enemy], " is asleep."));
+                            Sound.Play(Snoring);
+                            Enemy Sleep += -1;
+                            If (Enemy Sleep == 0)
+                            {
+                                List.Add(battle log, Operator.Join(Enemy Names[enemy], " wakes up."));
+                            }
+                        }
+                        Else
+                        {
+                            List.Add(battle log, Operator.Join(Enemy Names[enemy], " tripped and cannot attack!"));
+                            Sound.Play(arrow);
+                            Control.Wait(0.5);
+                            enemy trip = 0;
+                        }
+                    }
+                    Else
+                    {
+                        If (Operator.Random(1 , (4 - ((enemy == 10) And (enemy hp > 0)))) == 1)
+                        {
+                            enemyboutspec = Operator.LetterOf(enemyspecial[enemy], Operator.Random(1 , Variable.Length(enemyspecial[enemy])));
+                            If (enemyboutspec == "i")
+                            {
+                                Sound.Play(Ice Wave);
+                                List.Add(battle log, Operator.Join(Operator.Join("A freezing beam shoots from ", Enemy Names[enemy]), "!"));
+                                List.Add(battle log, Operator.Join(Operator.Join("All battle changes ", "undesirable to it were nullified"), "!"));
+                                rafi charging = 0;
+                                enemy illusion = 0;
+                                enemy trip = 0;
+                                attack rafi count = 0;
+                                luck shield = 0;
+                                Ironized = 0;
+                                Enemy Sleep = 0;
+                                enemy CF = 0;
+                                List.ReplaceItem(Shields, 1, 1);
+                                List.ReplaceItem(Shields, 2, 1);
+                                List.ReplaceItem(Shields, 3, 1);
+                            }
+                            Else
+                            {
+                                If (enemyboutspec == "m")
+                                {
+                                    Sound.Play(dark2);
+                                    Sound.Play(arrow);
+                                    Call arget;
+                                    If (Ironized > 0)
+                                    {
+                                        List.Add(battle log, Operator.Join(Operator.Join(Operator.Join(Enemy Names[enemy], " used pepper spray, but "), names[to damage]), " is ironized!"));
+                                    }
+                                    Else
+                                    {
+                                        List.ReplaceItem(protagonist status, to damage, Operator.Random(3 , 5));
+                                        List.Add(battle log, Operator.Join(Operator.Join(Operator.Join(Enemy Names[enemy], " used pepper spray, blurring "), names[to damage]), "'s vision!"));
+                                    }
+                                }
+                                Else
+                                {
+                                    If (enemyboutspec == "z")
+                                    {
+                                        Sound.Play(arrow);
+                                        Sound.Play(Snoring);
+                                        Call arget;
+                                        If (Ironized > 0)
+                                        {
+                                            List.Add(battle log, Operator.Join(Operator.Join(Operator.Join(Enemy Names[enemy], " used a sleep gun, but "), names[to damage]), " is ironized!"));
+                                        }
+                                        Else
+                                        {
+                                            List.ReplaceItem(protagonist status, to damage, Operator.Random(12 , 13));
+                                            List.Add(battle log, Operator.Join(Operator.Join(Operator.Join(Enemy Names[enemy], " used a sleep gun, sedating "), names[to damage]), "!"));
+                                        }
+                                    }
+                                    Else
+                                    {
+                                        If (enemyboutspec == "c")
+                                        {
+                                            Sound.Play(arrow);
+                                            Sound.Play(Head Shake);
+                                            Call arget;
+                                            If (Ironized > 0)
+                                            {
+                                                List.Add(battle log, Operator.Join(Operator.Join(Operator.Join(Enemy Names[enemy], " created disruptive waves, but "), names[to damage]), " is ironized!"));
+                                            }
+                                            Else
+                                            {
+                                                List.ReplaceItem(protagonist status, to damage, Operator.Random(23 , 24));
+                                                List.Add(battle log, Operator.Join(Operator.Join(Operator.Join(Enemy Names[enemy], " created disruptive waves, confusing "), names[to damage]), "!"));
+                                            }
+                                        }
+                                        Else
+                                        {
+                                            If (enemyboutspec == "p")
+                                            {
+                                                List.Add(battle log, Operator.Join(Enemy Names[enemy], " is charging!"));
+                                                enemy charge += 0.4;
+                                                Sound.Play(attack2);
+                                            }
+                                            Else
+                                            {
+                                                If (enemyboutspec == "t")
+                                                {
+                                                    Sound.Play(doubleedge);
+                                                    If (Operator.Random(1 , 4) == 1)
+                                                    {
+                                                        List.Add(battle log, Operator.Join(Enemy Names[enemy], "'s aggresive attack failed."));
+                                                    }
+                                                    Else
+                                                    {
+                                                        List.Add(battle log, Operator.Join(Enemy Names[enemy], " aggresively attacks!"));
+                                                        Call Damage character(to damage)(1.35);
+                                                    }
+                                                }
+                                                Else
+                                                {
+                                                    Call eenmy normal atk;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        Else
+                        {
+                            Call eenmy normal atk;
+                        }
+                    }
+                    Call Battle int.(2);
+                    Control.Wait(1);
+                    Ironized += -1;
+                    If (Ironized < 1)
+                    {
+                        If (Ironized == 0)
+                        {
+                            List.Add(battle log, "The effect of Ironize has worn off!");
+                        }
+                        Ironized = 0;
+                    }
+                    Repeat Until ((protagonist hps[to damage] > 0) Or (checkcount > 100000))
+                    {
+                        to damage = Operator.Random(1 , character#);
+                        checkcount += 1;
+                    }
+                    If (checkcount > 100)
+                    {
+                        Control.Wait(1);
+                        If (enemy == 6)
+                        {
+                            Stop(this script);
+                        }
+                        Else
+                        {
+                        }
+                    }
+                }
+            }
+        }
+        count += -1;
+    }
+    List.Add(battle log, Operator.Join("Gained ", Operator.Join((Operator.Round((Operator.Join(Operator.LetterOf(enemy data[enemy], 7), Operator.Join(Operator.LetterOf(enemy data[enemy], 8), Operator.LetterOf(enemy data[enemy], 9))) * 3.0028)) * number of enemies), " Exp.Points!")));
+    Call Battle int.(2);
+    Control.Wait(2);
+    Call Gain((Operator.Round((Operator.Join(Operator.LetterOf(enemy data[enemy], 7), Operator.Join(Operator.LetterOf(enemy data[enemy], 8), Operator.LetterOf(enemy data[enemy], 9))) * 3.0028)) * number of enemies)) with(character#);
+    Wait Until Sensing.KeyPressed(space);
+}
+
+Define Battle int.(string n) (warp=true)
+{
+    If (protagonist hps[1] < 0)
+    {
+        List.ReplaceItem(protagonist hps, 1, 0);
+    }
+    If (protagonist hps[2] < 0)
+    {
+        List.ReplaceItem(protagonist hps, 2, 0);
+    }
+    If (protagonist hps[3] < 0)
+    {
+        List.ReplaceItem(protagonist hps, 3, 0);
+    }
+    If (enemy hp < 1)
+    {
+        enemy hp = 0;
+    }
+    intlength = List.Length(-);
+    List.DeleteAll(-);
+    List.Add(-, Operator.Join(Operator.Join(user, " HP:"), Operator.Join(Operator.Join(protagonist hps[1], "/"), Operator.Join(Operator.LetterOf(protagonist data[1], 7), Operator.LetterOf(protagonist data[1], 8)))));
+    If (Ironized > 0)
+    {
+        List.ReplaceItem(-, List.Length(-), Operator.Join(-[List.Length(-)], ":IRON"));
+    }
+    If (luck shield > 0)
+    {
+        List.ReplaceItem(-, List.Length(-), Operator.Join(-[List.Length(-)], ":CRITX"));
+    }
+    If (protagonist status[1] > 20)
+    {
+        List.ReplaceItem(-, List.Length(-), Operator.Join(-[List.Length(-)], ":DAZED"));
+    }
+    Else
+    {
+        If (protagonist status[1] > 10)
+        {
+            List.ReplaceItem(-, List.Length(-), Operator.Join(-[List.Length(-)], ":SLEEP"));
+        }
+        Else
+        {
+            If (protagonist status[1] > 0)
+            {
+                List.ReplaceItem(-, List.Length(-), Operator.Join(-[List.Length(-)], ":MISS"));
+            }
+            Else
+            {
+            }
+        }
+    }
+    List.ReplaceItem(-, List.Length(-), Operator.Join(Operator.Join(-[List.Length(-)], "   MP:"), character mp[1]));
+    If (character# > 1)
+    {
+        List.Add(-, Operator.Join("Tane HP:", Operator.Join(Operator.Join(protagonist hps[2], "/"), Operator.Join(Operator.LetterOf(protagonist data[2], 7), Operator.LetterOf(protagonist data[2], 8)))));
+        If (Ironized > 0)
+        {
+            List.ReplaceItem(-, List.Length(-), Operator.Join(-[List.Length(-)], ":IRON"));
+        }
+        If (luck shield > 0)
+        {
+            List.ReplaceItem(-, List.Length(-), Operator.Join(-[List.Length(-)], ":CRITX"));
+        }
+        If (protagonist status[2] > 20)
+        {
+            List.ReplaceItem(-, List.Length(-), Operator.Join(-[List.Length(-)], ":DAZED"));
+        }
+        Else
+        {
+            If (protagonist status[2] > 10)
+            {
+                List.ReplaceItem(-, List.Length(-), Operator.Join(-[List.Length(-)], ":SLEEP"));
+            }
+            Else
+            {
+                If (protagonist status[2] > 0)
+                {
+                    List.ReplaceItem(-, List.Length(-), Operator.Join(-[List.Length(-)], ":MISS"));
+                }
+                Else
+                {
+                }
+            }
+        }
+        List.ReplaceItem(-, List.Length(-), Operator.Join(Operator.Join(-[List.Length(-)], "   MP:"), character mp[2]));
+    }
+    Else
+    {
+        List.Add(-, "");
+    }
+    If (character# == 3)
+    {
+        List.Add(-, Operator.Join("Rafi HP:", Operator.Join(Operator.Join(protagonist hps[3], "/"), Operator.Join(Operator.LetterOf(protagonist data[3], 7), Operator.LetterOf(protagonist data[3], 8)))));
+        If (Ironized > 0)
+        {
+            List.ReplaceItem(-, List.Length(-), Operator.Join(-[List.Length(-)], ":IRON"));
+        }
+        If (rafi charging > 0)
+        {
+            List.ReplaceItem(-, List.Length(-), Operator.Join(-[List.Length(-)], ":PWRUP"));
+        }
+        If (attack rafi count > 0)
+        {
+            List.ReplaceItem(-, List.Length(-), Operator.Join(-[List.Length(-)], ":DECOY"));
+        }
+        If (luck shield > 0)
+        {
+            List.ReplaceItem(-, List.Length(-), Operator.Join(-[List.Length(-)], ":CRITX"));
+        }
+        If (protagonist status[3] > 20)
+        {
+            List.ReplaceItem(-, List.Length(-), Operator.Join(-[List.Length(-)], ":DAZED"));
+        }
+        Else
+        {
+            If (protagonist status[3] > 10)
+            {
+                List.ReplaceItem(-, List.Length(-), Operator.Join(-[List.Length(-)], ":SLEEP"));
+            }
+            Else
+            {
+                If (protagonist status[3] > 0)
+                {
+                    List.ReplaceItem(-, List.Length(-), Operator.Join(-[List.Length(-)], ":MISS"));
+                }
+                Else
+                {
+                }
+            }
+        }
+        List.ReplaceItem(-, List.Length(-), Operator.Join(Operator.Join(-[List.Length(-)], "   MP:"), character mp[3]));
+    }
+    Else
+    {
+        List.Add(-, "");
+    }
+    If (count == 2)
+    {
+        List.Add(-, Operator.Join(Operator.Join(Enemy Names[enemy], " (x2)"), ""));
+    }
+    Else
+    {
+        List.Add(-, Operator.Join(Operator.Join(Enemy Names[enemy], ""), ""));
+    }
+    If ((enemy == 10) Or (enemy == 6))
+    {
+        List.ReplaceItem(-, List.Length(-), Operator.Join(Operator.Join(-[List.Length(-)], " HP:"), "????"));
+    }
+    Else
+    {
+        List.ReplaceItem(-, List.Length(-), Operator.Join(Operator.Join(-[List.Length(-)], " HP:"), enemy hp));
+    }
+    If (enemy illusion > 0)
+    {
+        List.ReplaceItem(-, List.Length(-), Operator.Join(-[List.Length(-)], ":MISS"));
+    }
+    If (Enemy Sleep > 0)
+    {
+        List.ReplaceItem(-, List.Length(-), Operator.Join(-[List.Length(-)], ":SLEEP"));
+    }
+    If (enemy CF > 0)
+    {
+        List.ReplaceItem(-, List.Length(-), Operator.Join(-[List.Length(-)], ":CONFUSED"));
+    }
+    If (enemy charge > 1)
+    {
+        List.ReplaceItem(-, List.Length(-), Operator.Join(-[List.Length(-)], ":PWRUP"));
+    }
+    If (Shields[1] < 1)
+    {
+        List.ReplaceItem(-, List.Length(-), Operator.Join(-[List.Length(-)], ":WEAKENED"));
+    }
+    List.Add(-, battle log[(List.Length(battle log) - 2)]);
+    List.Add(-, battle log[(List.Length(battle log) - 1)]);
+    List.Add(-, battle log[(List.Length(battle log) - 0)]);
+}
+
+Define Colision: Area 2 (warp=false)
+{
+    Call Area("🏙️🏙️🏙️🏙️🏙️🏙️🏙️🏙️🏙️🏙️🏙️🏙️🏙️🏙️🏙️🏙️🏙️🏙️🏙️🏙️🏙️🏙️🏙️🏙️🏙️🏙️🏙️")("⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜")("⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜⬜")("⬜⬜⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛🛏️⬜")("⬜⬜⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬜⬜")("⬜⬜⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬜⬜")("⬜⬜⬜⬜⬜⬜⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬜⬜")("⬜⬜⬜⬜⬜⬜⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬜⬜")("⬛⬛⬛⬛🟫🟫⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛");
+    If ((Sensing.KeyPressed(right arrow) And (character x < 27)) And (((Not (((character y < 7) And (character x == 2)))) Or (character y < 3)) And (Not (((character x == 6) And (character y > 4))))))
+    {
+        character x += 1;
+    }
+    If ((Sensing.KeyPressed(left arrow) And (character x > 1)) And (Not (((character x == 26) And (character y > 2)))))
+    {
+        character x += -1;
+        If ((character x == 26) And ((character y == 4) Or (character y == 3)))
+        {
+            Call Heal(1);
+            Call Heal(2);
+            Sound.Play(sol);
+        }
+    }
+    If ((Sensing.KeyPressed(up arrow) And (character y > 2)) And (Not (((character x > 2) And (character x < 7)))))
+    {
+        character y += -1;
+        If ((character x == 26) And ((character y == 4) Or (character y == 3)))
+        {
+            Call Heal(1);
+            Call Heal(2);
+            Sound.Play(sol);
+        }
+    }
+    If ((Sensing.KeyPressed(down arrow) And ((character y < 7) Or ((character y < 8) And (character x > 4)))) And ((((character x > 25) Or (character x < 3)) Or (character y == 7)) And (Not (((character y == 7) And (character x > 11))))))
+    {
+        character y += 1;
+        If ((character x == 26) And ((character y == 4) Or (character y == 3)))
+        {
+            Call Heal(1);
+            Call Heal(2);
+            Sound.Play(sol);
+        }
+    }
+    Control.Wait(0.15);
+}
+
+Define Damage(string time)(string enemy def)(string ch)(string user def)(string crit?) (warp=false)
+{
+    AT = (Operator.Join(Operator.LetterOf(protagonist data[ch], 1), Operator.LetterOf(protagonist data[ch], 2)) * time);
+    If (user def == 1)
+    {
+        AT = Operator.Join(Operator.LetterOf(protagonist data[ch], 3), Operator.LetterOf(protagonist data[ch], 4));
+    }
+    DE = Operator.Join(Operator.LetterOf(enemy data[enemy], 3), Operator.LetterOf(enemy data[enemy], 4));
+    damage = ((Operator.Random(0.8 , 1) * ((AT * AT) / (abs(AT) + DE))) * e ^((protagonist levels[ch] / 8)));
+    damage = Operator.Round((0 - abs(damage)));
+    If ((Operator.Random(1 , 255) < (Operator.Join(Operator.LetterOf(protagonist data[ch], 5), Operator.LetterOf(protagonist data[ch], 6)) + 1)) Or (crit? == 1))
+    {
+        Sound.Play(slice);
+        damage = ((Operator.Random(-0.8 , -1) * ((AT * AT) / (abs(AT) + 0))) * e ^((protagonist levels[ch] / 8)));
+        damage = Operator.Round(damage);
+        enemy hp += damage;
+        List.Add(battle log, Operator.Join("Critical hit! ", Operator.Join(Enemy Names[enemy], Operator.Join(" took ", Operator.Join((-1 * damage), " damage!")))));
+    }
+    Else
+    {
+        enemy hp += damage;
+        If (Operator.Random(1 , (11 - (((protagonist status[ch] > 0) And (protagonist status[ch] < 10)) * 9))) == 1)
+        {
+            enemy hp += (0 - damage);
+            damage = 0;
+            Sound.Play(Evade);
+            List.Add(battle log, Operator.Join(Operator.Join("But ", Enemy Names[enemy]), " dodged the attack!"));
+        }
+        Else
+        {
+            List.Add(battle log, Operator.Join(Enemy Names[enemy], Operator.Join(" took ", Operator.Join((-1 * damage), " damage!"))));
+        }
+    }
+}
+
+Define Damage character(string n)(string power) (warp=false)
+{
+    Control.Wait(0.5);
+    Sound.Play(attack);
+    If (Ironized > 0)
+    {
+        List.Add(battle log, Operator.Join(Enemy Names[enemy], " attacked!"));
+        List.Add(battle log, Operator.Join(names[n], " is ironized!"));
+    }
+    Else
+    {
+        If ((Operator.Random(1 , 160) < (Operator.Join(Operator.LetterOf(protagonist data[n], 5), Operator.LetterOf(protagonist data[n], 6)) + 1)) Or ((Operator.Random(1 , 3) == 1) And (enemy illusion > 0)))
+        {
+            Sound.Play(Evade);
+            List.Add(battle log, Operator.Join(Enemy Names[enemy], "'s attack missed!"));
+        }
+        Else
+        {
+            If (enemy == 10)
+            {
+                Sound.Play(Explosion);
+            }
+            If (floor(((Operator.Random(0.85 , 1) * Shields[n]) * (1 * ((power * Operator.Join(Operator.LetterOf(enemy data[enemy], 1), Operator.LetterOf(enemy data[enemy], 2))) - Operator.Join(Operator.LetterOf(protagonist data[n], 3), Operator.LetterOf(protagonist data[n], 4)))))) > 0)
+            {
+                If ((luck shield < 1) And (Operator.Random(1 , 100) < Operator.Join(Operator.LetterOf(enemy data[enemy], 5), Operator.LetterOf(enemy data[enemy], 6))))
+                {
+                    damage = (floor((((Operator.Random(0.85 , 1) * Shields[n]) * (1 * ((power * Operator.Join(Operator.LetterOf(enemy data[enemy], 1), Operator.LetterOf(enemy data[enemy], 2))) - Operator.Join(Operator.LetterOf(protagonist data[n], 3), Operator.LetterOf(protagonist data[n], 4))))) * 1.5)) + 2);
+                    List.ReplaceItem(protagonist hps, n, (protagonist hps[n] - damage));
+                    Sound.Play(slice);
+                    List.Add(battle log, Operator.Join("Brutal hit! ", Operator.Join(Operator.Join(Operator.Join(Operator.Join(Enemy Names[enemy], Operator.Join(" dealt ", damage)), " damage to "), names[n]), "!")));
+                }
+                Else
+                {
+                    damage = (floor(((Operator.Random(0.85 , 1) * Shields[n]) * (1 * ((power * Operator.Join(Operator.LetterOf(enemy data[enemy], 1), Operator.LetterOf(enemy data[enemy], 2))) - Operator.Join(Operator.LetterOf(protagonist data[n], 3), Operator.LetterOf(protagonist data[n], 4)))))) + 2);
+                    List.ReplaceItem(protagonist hps, n, (protagonist hps[n] - damage));
+                    List.Add(battle log, Operator.Join(Operator.Join(Operator.Join(Operator.Join(Enemy Names[enemy], Operator.Join(" dealt ", damage)), " damage to "), names[n]), "!"));
+                }
+                luck shield += -1;
+            }
+            Else
+            {
+                List.ReplaceItem(protagonist hps, n, (protagonist hps[n] - 1));
+                List.Add(battle log, Operator.Join(Operator.Join(Operator.Join(Operator.Join(Enemy Names[enemy], Operator.Join(" dealt ", 1)), " damage to "), names[n]), "!"));
+            }
+            If (protagonist hps[n] < 1)
+            {
+                Sound.Play(die);
+                List.Add(battle log, Operator.Join(names[n], " was defeated!"));
+            }
+        }
+        Control.Wait(0.1);
+    }
+}
+
+Define DEC STATUS(string number or text) (warp=false)
+{
+    If (protagonist status[number or text] > 0)
+    {
+        List.ReplaceItem(protagonist status, number or text, (protagonist status[number or text] - 1));
+        If ((protagonist status[number or text] % 10) == 0)
+        {
+            If (protagonist status[number or text] == 0)
+            {
+                List.Add(battle log, Operator.Join(names[number or text], "'s accuracy reverted!"));
+            }
+            If (protagonist status[number or text] == 10)
+            {
+                List.Add(battle log, Operator.Join(names[number or text], " woke up!"));
+            }
+            If (protagonist status[number or text] == 20)
+            {
+                List.Add(battle log, Operator.Join(names[number or text], " became oriented!"));
+            }
+            Control.Wait(1);
+            List.ReplaceItem(protagonist status, number or text, 0);
+        }
+    }
+}
+
+Define eenmy normal atk (warp=false)
+{
+    If (enemy CF > 0)
+    {
+        If (Operator.Random(1 , 3) == 1)
+        {
+            List.Add(battle log, Operator.Join(Enemy Names[enemy], " is confused!"));
+            Call Damage character(to damage)(enemy charge);
+        }
+        Else
+        {
+            damage = Operator.Random(20 , 49);
+            Sound.Play(Head Shake);
+            Sound.Play(attack3);
+            enemy hp += (0 - damage);
+            List.Add(battle log, Operator.Join(Enemy Names[enemy], Operator.Join(" took ", Operator.Join(damage, " damage in confusion!"))));
+        }
+        enemy CF += -1;
+        If (enemy CF == 0)
+        {
+            List.Add(battle log, Operator.Join(Enemy Names[enemy], " is no longer confused."));
+        }
+    }
+    Else
+    {
+        Call Damage character(to damage)(enemy charge);
+        enemy charge = 1;
+    }
+}
+
+Define Find string with username(string string)(string y) (warp=false)
+{
+    string = "";
+    count = 0;
+    Repeat (Variable.Length(string))
+    {
+        count += 1;
+        If ((count == character x) And (y == character y))
+        {
+            string = Operator.Join(string, "👦");
+        }
+        Else
+        {
+            If ((count == character x) And (y == (character y + 1)))
+            {
+                string = Operator.Join(string, "🥼");
+            }
+            Else
+            {
+                string = Operator.Join(string, Operator.LetterOf(string, count));
+            }
+        }
+    }
+    List.Add(-, string);
+}
+
+Define Gain(string n) with(string s) (warp=false)
+{
+    Wait Until (Not (Sensing.KeyPressed(space)));
+    List.ReplaceItem(exp, 1, (n + exp[1]));
+    Repeat (10)
+    {
+        If (exp[1] > ((e ^(((protagonist levels[1] - 0) * ln(2))) * 6) - 5.01))
+        {
+            Call Level up(1);
+        }
+        If (s > 1)
+        {
+            List.ReplaceItem(exp, 2, ((n / 10) + exp[2]));
+            If (exp[2] > ((e ^(((protagonist levels[2] - 0) * ln(2))) * 6) - 5.01))
+            {
+                Call Level up(2);
+            }
+        }
+        If (s > 2)
+        {
+            List.ReplaceItem(exp, 3, ((n / 10) + exp[3]));
+            If (exp[3] > ((e ^(((protagonist levels[3] - 0) * ln(2))) * 6) - 5.01))
+            {
+                Call Level up(3);
+            }
+        }
+    }
+}
+
+Define Heal(string character) (warp=false)
+{
+    List.ReplaceItem(protagonist hps, character, Operator.Join(Operator.LetterOf(protagonist data[character], 7), Operator.LetterOf(protagonist data[character], 8)));
+}
+
+Define Level up(string number or text) (warp=false)
+{
+    If (protagonist levels[number or text] < 12)
+    {
+        List.ReplaceItem(protagonist data, number or text, Operator.Join(Operator.Join(Operator.Join(Operator.LetterOf(protagonist data[number or text], 1), Operator.LetterOf(protagonist data[number or text], 2)), Operator.Join(Operator.LetterOf(protagonist data[number or text], 3), Operator.LetterOf(protagonist data[number or text], 4))), Operator.Join(Operator.Join(Operator.LetterOf(protagonist data[number or text], 5), Operator.LetterOf(protagonist data[number or text], 6)), (Operator.Join(Operator.LetterOf(protagonist data[number or text], 7), Operator.LetterOf(protagonist data[number or text], 8)) + 7))));
+        List.ReplaceItem(protagonist levels, number or text, (protagonist levels[number or text] + 1));
+        List.ReplaceItem(protagonist hps, number or text, (protagonist hps[number or text] + 7));
+        Sound.Play(level up);
+        Hover = 1;
+        stat pts = 4;
+        Repeat (4)
+        {
+            Repeat Until Sensing.KeyPressed(space)
+            {
+                Call Level up stat points display(number or text);
+            }
+            Sound.Play(Tick);
+            If (Hover == 1)
+            {
+                List.ReplaceItem(protagonist data, number or text, Operator.Join(Operator.Join((Operator.Join(Operator.LetterOf(protagonist data[number or text], 1), Operator.LetterOf(protagonist data[number or text], 2)) + 1), Operator.Join(Operator.LetterOf(protagonist data[number or text], 3), Operator.LetterOf(protagonist data[number or text], 4))), Operator.Join(Operator.Join(Operator.LetterOf(protagonist data[number or text], 5), Operator.LetterOf(protagonist data[number or text], 6)), (Operator.Join(Operator.LetterOf(protagonist data[number or text], 7), Operator.LetterOf(protagonist data[number or text], 8)) + 0))));
+            }
+            Else
+            {
+                If (Hover == 2)
+                {
+                    List.ReplaceItem(protagonist data, number or text, Operator.Join(Operator.Join(Operator.Join(Operator.LetterOf(protagonist data[number or text], 1), Operator.LetterOf(protagonist data[number or text], 2)), (Operator.Join(Operator.LetterOf(protagonist data[number or text], 3), Operator.LetterOf(protagonist data[number or text], 4)) + 1)), Operator.Join(Operator.Join(Operator.LetterOf(protagonist data[number or text], 5), Operator.LetterOf(protagonist data[number or text], 6)), (Operator.Join(Operator.LetterOf(protagonist data[number or text], 7), Operator.LetterOf(protagonist data[number or text], 8)) + 0))));
+                }
+                Else
+                {
+                    List.ReplaceItem(protagonist data, number or text, Operator.Join(Operator.Join(Operator.Join(Operator.LetterOf(protagonist data[number or text], 1), Operator.LetterOf(protagonist data[number or text], 2)), Operator.Join(Operator.LetterOf(protagonist data[number or text], 3), Operator.LetterOf(protagonist data[number or text], 4))), Operator.Join((Operator.Join(Operator.LetterOf(protagonist data[number or text], 5), Operator.LetterOf(protagonist data[number or text], 6)) + 2), (Operator.Join(Operator.LetterOf(protagonist data[number or text], 7), Operator.LetterOf(protagonist data[number or text], 8)) + 0))));
+                }
+            }
+            Wait Until (Not (Sensing.KeyPressed(space)));
+            stat pts += -1;
+        }
+        Call Level up stat points display(number or text);
+        If (List.ContainsItem(unlock skills lvls, protagonist levels[1]) And (number or text == 1))
+        {
+            Control.Wait(1);
+            Hover = 1;
+            Sound.Play(in);
+            List.DeleteAll(-);
+            List.Add(-, "Unlock a skill.");
+            Control.Wait(1);
+            Repeat Until (Sensing.KeyPressed(space) And (Not (List.ContainsItem(unlocked skills 1, (Hover + 1)))))
+            {
+                List.DeleteAll(-);
+                List.Add(-, "Unlock a skill.");
+                If (Hover == 1)
+                {
+                    List.Add(-, ">Spikes: Deals damage equal to ten times your level. MP:4");
+                }
+                Else
+                {
+                    List.Add(-, "Spikes: Deals damage equal to ten times your level. MP:4");
+                }
+                If (Hover == 2)
+                {
+                    List.Add(-, ">Ironize: Team invincible but cannot act for 4 turns. MP:6");
+                }
+                Else
+                {
+                    List.Add(-, "Ironize: Team invincible but cannot act for 4 turns. MP:6");
+                }
+                If (Hover == 3)
+                {
+                    List.Add(-, ">Yawn: Sometimes put the enemies to sleep. MP:2");
+                }
+                Else
+                {
+                    List.Add(-, "Yawn: Sometimes put the enemies to sleep. MP:2");
+                }
+                If (Hover == 4)
+                {
+                    List.Add(-, ">Body Press: Uses defense stat to do damage. MP:3");
+                }
+                Else
+                {
+                    List.Add(-, "Body Press: Uses defense stat to do damage. MP:3");
+                }
+                If List.ContainsItem(unlocked skills 1, (Hover + 1))
+                {
+                    List.Add(-, "Unlocked!");
+                }
+                Else
+                {
+                    List.Add(-, "Not yet unlocked!");
+                }
+                If Sensing.KeyPressed(down arrow)
+                {
+                    Hover += 1;
+                    Control.Wait(0.1);
+                    If (Hover == 5)
+                    {
+                        Hover = 4;
+                    }
+                }
+                If Sensing.KeyPressed(up arrow)
+                {
+                    Hover += -1;
+                    Control.Wait(0.1);
+                    If (Hover == 0)
+                    {
+                        Hover = 1;
+                    }
+                }
+            }
+            List.Add(unlocked skills 1, (Hover + 1));
+        }
+        If (List.ContainsItem(unlock skills lvls, protagonist levels[3]) And (number or text == 3))
+        {
+            Control.Wait(1);
+            Hover = 1;
+            Sound.Play(in);
+            List.DeleteAll(-);
+            List.Add(-, "Unlock a skill.");
+            Control.Wait(1);
+            Repeat Until (Sensing.KeyPressed(space) And (Not (List.ContainsItem(unlocked skills 3, (Hover + 1)))))
+            {
+                List.DeleteAll(-);
+                List.Add(-, "Unlock a skill.");
+                If (Hover == 1)
+                {
+                    List.Add(-, ">Critguard: Protects against critical hits for a while. MP:5");
+                }
+                Else
+                {
+                    List.Add(-, "Critguard: Protects against critical hits for a while. MP:5");
+                }
+                If (Hover == 2)
+                {
+                    List.Add(-, ">Charge: Reduces damage by 40%. Next attack crit. MP:3");
+                }
+                Else
+                {
+                    List.Add(-, "Charge: Reduces damage by 40%. Next attack crit. MP:3");
+                }
+                If (Hover == 3)
+                {
+                    List.Add(-, ">Bark: Redirects all attacks to Rafi for 3 turns. MP:4");
+                }
+                Else
+                {
+                    List.Add(-, "Bark: Redirects all attacks to Rafi for 3 turns. MP:4");
+                }
+                If (Hover == 4)
+                {
+                    List.Add(-, ">Yap: Sometimes confuses enemies. MP:3");
+                }
+                Else
+                {
+                    List.Add(-, "Yap: Sometimes confuses enemies. MP:3");
+                }
+                If List.ContainsItem(unlocked skills 3, (Hover + 1))
+                {
+                    List.Add(-, "Unlocked!");
+                }
+                Else
+                {
+                    List.Add(-, "Not yet unlocked!");
+                }
+                If Sensing.KeyPressed(down arrow)
+                {
+                    Hover += 1;
+                    Control.Wait(0.1);
+                    If (Hover == 5)
+                    {
+                        Hover = 4;
+                    }
+                }
+                If Sensing.KeyPressed(up arrow)
+                {
+                    Hover += -1;
+                    Control.Wait(0.1);
+                    If (Hover == 0)
+                    {
+                        Hover = 1;
+                    }
+                }
+            }
+            List.Add(unlocked skills 3, (Hover + 1));
+        }
+        Wait Until (Not (Sensing.KeyPressed(space)));
+        Sound.Play(out);
+        If (List.ContainsItem(unlock skills lvls, protagonist levels[2]) And (number or text == 2))
+        {
+            Control.Wait(1);
+            Hover = 1;
+            Sound.Play(in);
+            List.DeleteAll(-);
+            List.Add(-, "Unlock a skill.");
+            Control.Wait(1);
+            Repeat Until (Sensing.KeyPressed(space) And (Not (List.ContainsItem(unlocked skills 2, (Hover + 1)))))
+            {
+                List.DeleteAll(-);
+                List.Add(-, "Unlock a skill.");
+                If (Hover == 1)
+                {
+                    List.Add(-, ">Tackle: Uses attack x1.2 during damage calculation. Can trip target. MP:4");
+                }
+                Else
+                {
+                    List.Add(-, "Tackle: Uses attack x1.2 during damage calculation. Can trip target. MP:4");
+                }
+                If (Hover == 2)
+                {
+                    List.Add(-, ">Berserk: Uses attack x1.5 during damage calculation. 20 recoil damage. MP:3");
+                }
+                Else
+                {
+                    List.Add(-, "Berserk: Uses attack x1.5 during damage calculation. 20 recoil damage. MP:3");
+                }
+                If (Hover == 3)
+                {
+                    List.Add(-, ">Unpower: Lower damage for 1 turn. MP:1");
+                }
+                Else
+                {
+                    List.Add(-, "Unpower: Lower damage for 1 turn. MP:1");
+                }
+                If (Hover == 4)
+                {
+                    List.Add(-, ">Illusion: Makes enemies inaccurate for 2 turns. MP:2");
+                }
+                Else
+                {
+                    List.Add(-, "Illusion: Makes enemies inaccurate for 2 turns. MP:2");
+                }
+                If List.ContainsItem(unlocked skills 2, (Hover + 1))
+                {
+                    List.Add(-, "Unlocked!");
+                }
+                Else
+                {
+                    List.Add(-, "Not yet unlocked!");
+                }
+                If Sensing.KeyPressed(down arrow)
+                {
+                    Hover += 1;
+                    Control.Wait(0.1);
+                    If (Hover == 5)
+                    {
+                        Hover = 4;
+                    }
+                }
+                If Sensing.KeyPressed(up arrow)
+                {
+                    Hover += -1;
+                    Control.Wait(0.1);
+                    If (Hover == 0)
+                    {
+                        Hover = 1;
+                    }
+                }
+            }
+            List.Add(unlocked skills 2, (Hover + 1));
+        }
+        Wait Until (Not (Sensing.KeyPressed(space)));
+        Sound.Play(out);
+        If Operator.Contains(-[6], "not")
+        {
+            List.ReplaceItem(-, 6, "Unlocked!");
+        }
+    }
+}
+
+Define Level up stat points display(string number or text) (warp=false)
+{
+    List.DeleteAll(-);
+    List.Add(-, Operator.Join(names[number or text], Operator.Join(" grew to Level ", Operator.Join(protagonist levels[number or text], "!"))));
+    List.Add(-, Operator.Join("Max. HP: ", Operator.Join(Operator.Join((Operator.Join(Operator.LetterOf(protagonist data[number or text], 7), Operator.LetterOf(protagonist data[number or text], 8)) - 7), "->"), Operator.Join(Operator.LetterOf(protagonist data[number or text], 7), Operator.LetterOf(protagonist data[number or text], 8)))));
+    List.Add(-, Operator.Join("Max MP: ", Operator.Join(Operator.Join(((protagonist levels[number or text] - 1) * mpidm[number or text]), "->"), (protagonist levels[number or text] * mpidm[number or text]))));
+    List.Add(-, Operator.Join("Stat points:", stat pts));
+    If (Hover == 1)
+    {
+        List.Add(-, Operator.Join(">Attack:", Operator.Join(Operator.LetterOf(protagonist data[number or text], 1), Operator.LetterOf(protagonist data[number or text], 2))));
+    }
+    Else
+    {
+        List.Add(-, Operator.Join("Attack:", Operator.Join(Operator.LetterOf(protagonist data[number or text], 1), Operator.LetterOf(protagonist data[number or text], 2))));
+    }
+    If (Hover == 2)
+    {
+        List.Add(-, Operator.Join(">Defense:", Operator.Join(Operator.LetterOf(protagonist data[number or text], 3), Operator.LetterOf(protagonist data[number or text], 4))));
+    }
+    Else
+    {
+        List.Add(-, Operator.Join("Defense:", Operator.Join(Operator.LetterOf(protagonist data[number or text], 3), Operator.LetterOf(protagonist data[number or text], 4))));
+    }
+    If (Hover == 3)
+    {
+        List.Add(-, Operator.Join(">Luck:", Operator.Join(Operator.LetterOf(protagonist data[number or text], 5), Operator.LetterOf(protagonist data[number or text], 6))));
+    }
+    Else
+    {
+        List.Add(-, Operator.Join("Luck:", Operator.Join(Operator.LetterOf(protagonist data[number or text], 5), Operator.LetterOf(protagonist data[number or text], 6))));
+    }
+    If Sensing.KeyPressed(down arrow)
+    {
+        Hover += 1;
+        Control.Wait(0.1);
+        If (Hover == 4)
+        {
+            Hover = 3;
+        }
+    }
+    If Sensing.KeyPressed(up arrow)
+    {
+        Hover += -1;
+        Control.Wait(0.1);
+        If (Hover == 0)
+        {
+            Hover = 1;
+        }
+    }
+}
+
+Define List Attack 1 (warp=false)
+{
+    chyeck 1 = 1;
+    List.Add(-, Operator.Join(Operator.Join(user, " command? MP Cost:"), 1m[Hover]));
+    If (chyeck 1 == Hover)
+    {
+        List.Add(-, Operator.Join(">", username attacks[chyeck 1]));
+    }
+    Else
+    {
+        If List.ContainsItem(unlocked skills 1, chyeck 1)
+        {
+            List.Add(-, username attacks[chyeck 1]);
+        }
+    }
+    chyeck 1 += 1;
+    If (chyeck 1 == Hover)
+    {
+        List.Add(-, Operator.Join(">", username attacks[chyeck 1]));
+    }
+    Else
+    {
+        If List.ContainsItem(unlocked skills 1, chyeck 1)
+        {
+            List.Add(-, username attacks[chyeck 1]);
+        }
+    }
+    chyeck 1 += 1;
+    If (chyeck 1 == Hover)
+    {
+        List.Add(-, Operator.Join(">", username attacks[chyeck 1]));
+    }
+    Else
+    {
+        If List.ContainsItem(unlocked skills 1, chyeck 1)
+        {
+            List.Add(-, username attacks[chyeck 1]);
+        }
+    }
+    chyeck 1 += 1;
+    If (chyeck 1 == Hover)
+    {
+        List.Add(-, Operator.Join(">", username attacks[chyeck 1]));
+    }
+    Else
+    {
+        If List.ContainsItem(unlocked skills 1, chyeck 1)
+        {
+            List.Add(-, username attacks[chyeck 1]);
+        }
+    }
+    chyeck 1 += 1;
+    If (chyeck 1 == Hover)
+    {
+        List.Add(-, Operator.Join(">", username attacks[chyeck 1]));
+    }
+    Else
+    {
+        If List.ContainsItem(unlocked skills 1, chyeck 1)
+        {
+            List.Add(-, username attacks[chyeck 1]);
+        }
+    }
+    chyeck 1 += 1;
+    If (pill count > 0)
+    {
+        If (chyeck 1 == Hover)
+        {
+            List.Add(-, Operator.Join(">", Operator.Join("Pill:", pill count)));
+        }
+        Else
+        {
+            List.Add(-, Operator.Join("Pill:", pill count));
+        }
+    }
+    Repeat Until List.ContainsItem(unlocked skills 1, Hover)
+    {
+        Hover += -1;
+        If (Hover > 6)
+        {
+            Hover = 1;
+        }
+        If (Hover < 1)
+        {
+            Hover = 6;
+        }
+    }
+    If Sensing.KeyPressed(up arrow)
+    {
+        Hover += -1;
+        Repeat Until List.ContainsItem(unlocked skills 1, Hover)
+        {
+            Hover += -1;
+            If (Hover > 6)
+            {
+                Hover = 1;
+            }
+            If (Hover < 1)
+            {
+                Hover = 6;
+            }
+        }
+        Control.Wait(0.1);
+    }
+    Else
+    {
+        If Sensing.KeyPressed(down arrow)
+        {
+            Hover += 1;
+            Repeat Until List.ContainsItem(unlocked skills 1, Hover)
+            {
+                Hover += 1;
+                If (Hover > 6)
+                {
+                    Hover = 1;
+                }
+                If (Hover < 1)
+                {
+                    Hover = 6;
+                }
+            }
+            Control.Wait(0.1);
+        }
+        Else
+        {
+        }
+    }
+}
+
+Define List Attack 2 (warp=false)
+{
+    List.Add(-, Operator.Join(Operator.Join("Tane", " command? MP Cost:"), 2m[Hover]));
+    chyeck 1 = 1;
+    If (chyeck 1 == Hover)
+    {
+        List.Add(-, Operator.Join(">", tane attacks[chyeck 1]));
+    }
+    Else
+    {
+        If List.ContainsItem(unlocked skills 2, chyeck 1)
+        {
+            List.Add(-, tane attacks[chyeck 1]);
+        }
+    }
+    chyeck 1 += 1;
+    If (chyeck 1 == Hover)
+    {
+        List.Add(-, Operator.Join(">", tane attacks[chyeck 1]));
+    }
+    Else
+    {
+        If List.ContainsItem(unlocked skills 2, chyeck 1)
+        {
+            List.Add(-, tane attacks[chyeck 1]);
+        }
+    }
+    chyeck 1 += 1;
+    If (chyeck 1 == Hover)
+    {
+        List.Add(-, Operator.Join(">", tane attacks[chyeck 1]));
+    }
+    Else
+    {
+        If List.ContainsItem(unlocked skills 2, chyeck 1)
+        {
+            List.Add(-, tane attacks[chyeck 1]);
+        }
+    }
+    chyeck 1 += 1;
+    If (chyeck 1 == Hover)
+    {
+        List.Add(-, Operator.Join(">", tane attacks[chyeck 1]));
+    }
+    Else
+    {
+        If List.ContainsItem(unlocked skills 2, chyeck 1)
+        {
+            List.Add(-, tane attacks[chyeck 1]);
+        }
+    }
+    chyeck 1 += 1;
+    If (chyeck 1 == Hover)
+    {
+        List.Add(-, Operator.Join(">", tane attacks[chyeck 1]));
+    }
+    Else
+    {
+        If List.ContainsItem(unlocked skills 2, chyeck 1)
+        {
+            List.Add(-, tane attacks[chyeck 1]);
+        }
+    }
+    chyeck 1 += 1;
+    If (pill count > 0)
+    {
+        If (chyeck 1 == Hover)
+        {
+            List.Add(-, Operator.Join(">", Operator.Join("Pill:", pill count)));
+        }
+        Else
+        {
+            List.Add(-, Operator.Join("Pill:", pill count));
+        }
+    }
+    Repeat Until List.ContainsItem(unlocked skills 2, Hover)
+    {
+        Hover += 1;
+        If (Hover > 6)
+        {
+            Hover = 1;
+        }
+        If (Hover < 1)
+        {
+            Hover = 6;
+        }
+    }
+    If Sensing.KeyPressed(up arrow)
+    {
+        Hover += -1;
+        Repeat Until List.ContainsItem(unlocked skills 2, Hover)
+        {
+            Hover += -1;
+            If (Hover > 6)
+            {
+                Hover = 1;
+            }
+            If (Hover < 1)
+            {
+                Hover = 6;
+            }
+        }
+        Control.Wait(0.1);
+    }
+    Else
+    {
+        If Sensing.KeyPressed(down arrow)
+        {
+            Hover += 1;
+            Repeat Until List.ContainsItem(unlocked skills 2, Hover)
+            {
+                Hover += 1;
+                If (Hover > 6)
+                {
+                    Hover = 1;
+                }
+                If (Hover < 1)
+                {
+                    Hover = 6;
+                }
+            }
+            Control.Wait(0.1);
+        }
+        Else
+        {
+        }
+    }
+}
+
+Define List Attack 3 (warp=false)
+{
+    List.Add(-, Operator.Join(Operator.Join("Rafi", " command? MP Cost:"), 3m[Hover]));
+    chyeck 1 = 1;
+    If (chyeck 1 == Hover)
+    {
+        List.Add(-, Operator.Join(">", rafi attacks[chyeck 1]));
+    }
+    Else
+    {
+        If List.ContainsItem(unlocked skills 3, chyeck 1)
+        {
+            List.Add(-, rafi attacks[chyeck 1]);
+        }
+    }
+    chyeck 1 += 1;
+    If (chyeck 1 == Hover)
+    {
+        List.Add(-, Operator.Join(">", rafi attacks[chyeck 1]));
+    }
+    Else
+    {
+        If List.ContainsItem(unlocked skills 3, chyeck 1)
+        {
+            List.Add(-, rafi attacks[chyeck 1]);
+        }
+    }
+    chyeck 1 += 1;
+    If (chyeck 1 == Hover)
+    {
+        List.Add(-, Operator.Join(">", rafi attacks[chyeck 1]));
+    }
+    Else
+    {
+        If List.ContainsItem(unlocked skills 3, chyeck 1)
+        {
+            List.Add(-, rafi attacks[chyeck 1]);
+        }
+    }
+    chyeck 1 += 1;
+    If (chyeck 1 == Hover)
+    {
+        List.Add(-, Operator.Join(">", rafi attacks[chyeck 1]));
+    }
+    Else
+    {
+        If List.ContainsItem(unlocked skills 3, chyeck 1)
+        {
+            List.Add(-, rafi attacks[chyeck 1]);
+        }
+    }
+    chyeck 1 += 1;
+    If (chyeck 1 == Hover)
+    {
+        List.Add(-, Operator.Join(">", rafi attacks[chyeck 1]));
+    }
+    Else
+    {
+        If List.ContainsItem(unlocked skills 3, chyeck 1)
+        {
+            List.Add(-, rafi attacks[chyeck 1]);
+        }
+    }
+    chyeck 1 += 1;
+    If (pill count > 0)
+    {
+        If (chyeck 1 == Hover)
+        {
+            List.Add(-, Operator.Join(">", Operator.Join("Pill:", pill count)));
+        }
+        Else
+        {
+            List.Add(-, Operator.Join("Pill:", pill count));
+        }
+    }
+    Repeat Until List.ContainsItem(unlocked skills 3, Hover)
+    {
+        Hover += 1;
+        If (Hover > 6)
+        {
+            Hover = 1;
+        }
+        If (Hover < 1)
+        {
+            Hover = 6;
+        }
+    }
+    If Sensing.KeyPressed(up arrow)
+    {
+        Hover += -1;
+        Repeat Until List.ContainsItem(unlocked skills 3, Hover)
+        {
+            Hover += -1;
+            If (Hover > 6)
+            {
+                Hover = 1;
+            }
+            If (Hover < 1)
+            {
+                Hover = 6;
+            }
+        }
+        Control.Wait(0.1);
+    }
+    Else
+    {
+        If Sensing.KeyPressed(down arrow)
+        {
+            Hover += 1;
+            Repeat Until List.ContainsItem(unlocked skills 3, Hover)
+            {
+                Hover += 1;
+                If (Hover > 6)
+                {
+                    Hover = 1;
+                }
+                If (Hover < 1)
+                {
+                    Hover = 6;
+                }
+            }
+            Control.Wait(0.1);
+        }
+        Else
+        {
+        }
+    }
+}
+
+Define List levels (warp=false)
+{
+    If (protagonist levels[1] > 11)
+    {
+        List.Add(-, Operator.Join(Operator.Join(Operator.Join(Operator.Join(Operator.Join(user, Operator.Join("    HP:", Operator.Join(Operator.Join(protagonist hps[1], "/"), Operator.Join(Operator.LetterOf(protagonist data[1], 7), Operator.LetterOf(protagonist data[1], 8))))), "    Level:"), protagonist levels[1]), "     Next Level:"), "-"));
+    }
+    Else
+    {
+        List.Add(-, Operator.Join(Operator.Join(Operator.Join(Operator.Join(Operator.Join(user, Operator.Join("    HP:", Operator.Join(Operator.Join(protagonist hps[1], "/"), Operator.Join(Operator.LetterOf(protagonist data[1], 7), Operator.LetterOf(protagonist data[1], 8))))), "    Level:"), protagonist levels[1]), "     Next Level:"), Operator.Round((((e ^(((protagonist levels[1] - 0) * ln(2))) * 6) - 5) - exp[1]))));
+    }
+    If (character# > 1)
+    {
+        If (protagonist levels[2] > 11)
+        {
+            List.Add(-, Operator.Join(Operator.Join(Operator.Join(Operator.Join(Operator.Join("Tane", Operator.Join("    HP:", Operator.Join(Operator.Join(protagonist hps[2], "/"), Operator.Join(Operator.LetterOf(protagonist data[2], 7), Operator.LetterOf(protagonist data[2], 8))))), "    Level:"), protagonist levels[2]), "     Next Level:"), "-"));
+        }
+        Else
+        {
+            List.Add(-, Operator.Join(Operator.Join(Operator.Join(Operator.Join(Operator.Join("Tane", Operator.Join("    HP:", Operator.Join(Operator.Join(protagonist hps[2], "/"), Operator.Join(Operator.LetterOf(protagonist data[2], 7), Operator.LetterOf(protagonist data[2], 8))))), "    Level:"), protagonist levels[2]), "     Next Level:"), Operator.Round((((e ^(((protagonist levels[2] - 0) * ln(2))) * 6) - 5) - exp[2]))));
+        }
+    }
+    If (character# > 2)
+    {
+        If (protagonist levels[3] > 11)
+        {
+            List.Add(-, Operator.Join(Operator.Join(Operator.Join(Operator.Join(Operator.Join("Rafi", Operator.Join("    HP:", Operator.Join(Operator.Join(protagonist hps[3], "/"), Operator.Join(Operator.LetterOf(protagonist data[3], 7), Operator.LetterOf(protagonist data[3], 8))))), "    Level:"), protagonist levels[3]), "     Next Level:"), "-"));
+        }
+        Else
+        {
+            List.Add(-, Operator.Join(Operator.Join(Operator.Join(Operator.Join(Operator.Join("Rafi", Operator.Join("    HP:", Operator.Join(Operator.Join(protagonist hps[3], "/"), Operator.Join(Operator.LetterOf(protagonist data[3], 7), Operator.LetterOf(protagonist data[3], 8))))), "    Level:"), protagonist levels[3]), "     Next Level:"), Operator.Round((((e ^(((protagonist levels[3] - 0) * ln(2))) * 6) - 5) - exp[3]))));
+        }
+    }
+}
+
+Define rafi turn (warp=false)
+{
+    If ((protagonist status[3] > 20) And (Operator.Random(1 , 2) == 1))
+    {
+        Sound.Play(attack3);
+        to damage = Operator.Random(10 , 12);
+        List.ReplaceItem(protagonist hps, 3, (protagonist hps[3] - to damage));
+        List.Add(battle log, Operator.Join("Rafi ", Operator.Join(" took ", Operator.Join(to damage, " damage in confusion!"))));
+    }
+    Else
+    {
+        If ((protagonist status[3] > 10) And (protagonist status[3] < 20))
+        {
+            List.Add(battle log, Operator.Join("Rafi ", " is asleep!"));
+            Sound.Play(Snoring);
+        }
+        Else
+        {
+            Wait Until (Not (Sensing.KeyPressed(space)));
+            Repeat Until ((Sensing.KeyPressed(space) And List.ContainsItem(unlocked skills 3, Hover)) And (Not (((character mp[3] < 3m[Hover]) Or ((Hover == 6) And (pill count == 0))))))
+            {
+                Call Battle int.(0);
+                Call List Attack 3;
+            }
+            If (Hover == 6)
+            {
+                Sound.Play(sol);
+                pill count += -1;
+                Call Heal(3);
+                Hover = 100;
+            }
+            If (character mp[3] < 3m[Hover])
+            {
+                List.Add(battle log, "Insufficient MP!");
+            }
+            Else
+            {
+                If (Hover == 100)
+                {
+                    List.Add(battle log, Operator.Join("Rafi", " used a pill!"));
+                    List.Add(battle log, Operator.Join("Rafi", " was fully healed!"));
+                    Wait Until (Not (Sensing.KeyPressed(h)));
+                }
+                Else
+                {
+                    List.Add(battle log, Operator.Join("Rafi", Operator.Join(" used ", Operator.Join(rafi attacks[Hover], "!"))));
+                }
+                If (Hover == 1)
+                {
+                    Sound.Play(attack);
+                    Call Damage(-1)(1)(3)(0)(rafi charging);
+                    rafi charging = 0;
+                }
+                If (Hover == 2)
+                {
+                    Sound.Play(block);
+                    luck shield = 9;
+                }
+                If (Hover == 3)
+                {
+                    Sound.Play(attack2);
+                    List.ReplaceItem(Shields, 3, 0.6);
+                    rafi charging = 1;
+                }
+                If (Hover == 4)
+                {
+                    Sound.Play(Bark);
+                    attack rafi count = 3;
+                }
+                If (Hover == 5)
+                {
+                    Sound.Play(Head Shake);
+                    If (Operator.Random(1 , 3) == 1)
+                    {
+                        enemy CF = Operator.Random(1 , 3);
+                        List.Add(battle log, Operator.Join(Enemy Names[enemy], " is confused!"));
+                    }
+                    Else
+                    {
+                        enemy CF = 0;
+                        List.Add(battle log, Operator.Join(Enemy Names[enemy], " did not become confused!"));
+                    }
+                }
+                List.ReplaceItem(character mp, 3, (character mp[3] - 3m[Hover]));
+            }
+        }
+    }
+}
+
+Define tane turn (warp=false)
+{
+    If ((protagonist status[2] > 20) And (Operator.Random(1 , 2) == 1))
+    {
+        Sound.Play(attack3);
+        to damage = Operator.Random(10 , 12);
+        List.ReplaceItem(protagonist hps, 2, (protagonist hps[2] - to damage));
+        List.Add(battle log, Operator.Join("Tane", Operator.Join(" took ", Operator.Join(to damage, " damage in confusion!"))));
+    }
+    Else
+    {
+        If ((protagonist status[2] > 10) And (protagonist status[2] < 20))
+        {
+            List.Add(battle log, Operator.Join("Tane", " is asleep!"));
+            Sound.Play(Snoring);
+        }
+        Else
+        {
+            Wait Until (Not (Sensing.KeyPressed(space)));
+            Repeat Until ((Sensing.KeyPressed(space) And List.ContainsItem(unlocked skills 2, Hover)) And (Not (((character mp[2] < 2m[Hover]) Or ((Hover == 6) And (pill count == 0))))))
+            {
+                Call Battle int.(0);
+                Call List Attack 2;
+            }
+            If (Hover == 6)
+            {
+                Sound.Play(sol);
+                pill count += -1;
+                Call Heal(2);
+                Hover = 100;
+            }
+            If (character mp[2] < 2m[Hover])
+            {
+                List.Add(battle log, "Insufficient MP!");
+            }
+            Else
+            {
+                If (Hover == 100)
+                {
+                    List.Add(battle log, Operator.Join("Tane", " used a pill!"));
+                    List.Add(battle log, Operator.Join("Tane", " was fully healed!"));
+                }
+                Else
+                {
+                    List.Add(battle log, Operator.Join("Tane", Operator.Join(" used ", Operator.Join(tane attacks[Hover], "!"))));
+                    If (Hover == 3)
+                    {
+                        List.Add(battle log, "Tane took 20 damage!");
+                    }
+                }
+                If (Hover == 1)
+                {
+                    Sound.Play(attack);
+                    Call Damage(-1)(1)(2)(0)("");
+                }
+                If (Hover == 2)
+                {
+                    Sound.Play(tackle);
+                    Call Damage(-1.2)(1)(2)(0)("");
+                    If (Operator.Random(1 , 5) == 1)
+                    {
+                        enemy trip = 1;
+                    }
+                }
+                If (Hover == 3)
+                {
+                    Sound.Play(doubleedge);
+                    Call Damage(-1.5)(1)(2)(0)("");
+                    List.ReplaceItem(protagonist hps, 2, (protagonist hps[2] - 20));
+                }
+                If (Hover == 4)
+                {
+                    Sound.Play(drain);
+                    List.ReplaceItem(Shields, 1, 0.66);
+                    List.ReplaceItem(Shields, 2, 0.66);
+                    List.ReplaceItem(Shields, 3, 0.66);
+                    List.Add(battle log, Operator.Join(Enemy Names[enemy], " will do less damage this turn."));
+                }
+                If (Hover == 5)
+                {
+                    enemy illusion = 2;
+                    Sound.Play(dark2);
+                    List.Add(battle log, Operator.Join(Operator.Join("A gust of illusions surrounds ", Enemy Names[enemy]), "."));
+                }
+            }
+            List.ReplaceItem(character mp, 2, (character mp[2] - 2m[Hover]));
+        }
+    }
+}
+
+Define username turn (warp=false)
+{
+    If ((protagonist status[1] > 20) And (Operator.Random(1 , 2) == 1))
+    {
+        Sound.Play(attack3);
+        to damage = Operator.Random(10 , 12);
+        List.ReplaceItem(protagonist hps, 1, (protagonist hps[1] - to damage));
+        List.Add(battle log, Operator.Join(user, Operator.Join(" took ", Operator.Join(to damage, " damage in confusion!"))));
+    }
+    Else
+    {
+        If ((protagonist status[1] > 10) And (protagonist status[1] < 20))
+        {
+            List.Add(battle log, Operator.Join(user, " is asleep!"));
+            Sound.Play(Snoring);
+        }
+        Else
+        {
+            Wait Until (Not (Sensing.KeyPressed(space)));
+            Repeat Until ((Sensing.KeyPressed(space) And List.ContainsItem(unlocked skills 1, Hover)) And (Not (((character mp[1] < 1m[Hover]) Or ((Hover == 6) And (pill count == 0))))))
+            {
+                Call Battle int.(0);
+                Call List Attack 1;
+            }
+            If (Hover == 6)
+            {
+                Sound.Play(sol);
+                pill count += -1;
+                Call Heal(1);
+                Hover = 100;
+            }
+            If (Hover == 100)
+            {
+                List.Add(battle log, Operator.Join(user, " used a pill!"));
+                List.Add(battle log, Operator.Join(user, " was fully healed!"));
+            }
+            Else
+            {
+                List.Add(battle log, Operator.Join(user, Operator.Join(" used ", Operator.Join(username attacks[Hover], "!"))));
+                If (Hover == 2)
+                {
+                    List.Add(battle log, Operator.Join(Enemy Names[enemy], Operator.Join(" took ", Operator.Join((10 * protagonist levels[1]), " damage!"))));
+                }
+            }
+            If (character mp[1] < 1m[Hover])
+            {
+                List.Add(battle log, "Insufficient MP!");
+            }
+            Else
+            {
+                If (Hover == 1)
+                {
+                    Sound.Play(attack);
+                    Call Damage(-1)(1)(1)("")("");
+                }
+                If (Hover == 2)
+                {
+                    Sound.Play(spikes);
+                    enemy hp += (-10 * protagonist levels[1]);
+                }
+                If (Hover == 3)
+                {
+                    Ironized = 4;
+                    Sound.Play(block2);
+                    List.Add(battle log, "The team becomes a lump of iron!");
+                }
+                If (Hover == 4)
+                {
+                    Sound.Play(Snoring);
+                    If (Operator.Random(1 , 3) == 1)
+                    {
+                        Enemy Sleep = Operator.Random(1 , 2);
+                        List.Add(battle log, Operator.Join(Enemy Names[enemy], " falls asleep."));
+                    }
+                    Else
+                    {
+                        List.Add(battle log, Operator.Join(Enemy Names[enemy], " did not fall asleep."));
+                    }
+                }
+                If (Hover == 5)
+                {
+                    Sound.Play(quake);
+                    Call Damage(0)(1)(1)(1)("");
+                }
+                List.ReplaceItem(character mp, 1, (character mp[1] - 1m[Hover]));
+            }
+        }
+    }
+}
+
+
+//----- Orphaned blocks -----------------------------------------------------------------------------------------------
+
+new music = 9;
+
+List.Add(names, user);
+List.Add(names, "Tane");
+List.Add(names, "Rafi");
+
+Forever
+{
+    Sound.PlayUntilDone(final boss);
+}
+
+List.Add(character mp, (protagonist levels[1] * 4));
+
+List.Add(battle log, Operator.Join(Enemy Names[enemy], "'s aggresive attack failed."));
+
+
+//----- Costumes ------------------------------------------------------------------------------------------------------
+
+download.png
+
+
+//----- Sounds --------------------------------------------------------------------------------------------------------
+
+arrow.wav
+attack.wav
+attack2.wav
+attack3.wav
+Bark.wav
+battle2.wav
+battle vs girl/boy.mp3
+block.wav
+block2.wav
+chief.mp3
+dark.wav
+dark2.wav
+dark night outside.mp3
+die.wav
+doubleedge.wav
+drain.wav
+drama.wav
+end.mp3
+Evade.wav
+Explosion.wav
+final boss.mp3
+final stretch.mp3
+Game Over.mp3
+Head Shake.wav
+High Whoosh.wav
+Ice Wave.wav
+in.wav
+level up.wav
+out.wav
+police encounter.mp3
+quake.wav
+revege.wav
+robot encounter.mp3
+run!.wav
+school.mp3
+Scream2.wav
+slice.wav
+Snoring.wav
+sol.wav
+spikes.wav
+tackle.wav
+Tick.wav
+Title.mp3
