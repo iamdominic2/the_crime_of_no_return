@@ -2,3 +2,6 @@ A very old-looking JRPG that is entirely based on a list. I'm currently trying t
 However, I did update the enemies and allies to be more diverse in 2025.
 Before that, enemies only did normal attacks, but now they can inflict status, disperse buffs, etc.
 Hint: Save the pills and level up!
+
+Link
+https://iamdominic2.itch.io/the-crime-of-no-return
