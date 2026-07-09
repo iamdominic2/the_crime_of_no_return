@@ -1,4 +1,4 @@
-# THE CRIME OF NO RETURN
+# The crime of no return
 
 A very old-looking JRPG that is entirely based on a text-based list on Scratch! It's the constraints of being in a list that make it graphically look poor, and it also was only the second of what I will call it a "real RPG". First version was 2023, in the midst of my examinations, because I was indeed bored! (Interesting choice in hindsight.)
 
